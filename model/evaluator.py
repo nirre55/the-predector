@@ -1,5 +1,8 @@
+import warnings
 import numpy as np
 from sklearn.metrics import brier_score_loss, log_loss, roc_auc_score
+
+warnings.filterwarnings('ignore', message='X does not have valid feature names', category=UserWarning)
 from sklearn.calibration import calibration_curve
 from rich.table import Table
 from rich.console import Console

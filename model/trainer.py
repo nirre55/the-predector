@@ -1,3 +1,4 @@
+import warnings
 import numpy as np
 import joblib
 from sklearn.preprocessing import StandardScaler
@@ -7,6 +8,9 @@ from lightgbm import LGBMClassifier, early_stopping
 
 from config import N_SPLITS, GAP, LGBM_PARAMS, MODEL_PATH, SCALER_PATH
 from model.calibrator import PlattCalibratedClassifier
+
+
+warnings.filterwarnings('ignore', message='X does not have valid feature names', category=UserWarning)
 
 
 def train_pipeline(X: np.ndarray, y: np.ndarray) -> None:
