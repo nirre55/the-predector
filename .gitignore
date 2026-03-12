@@ -25,3 +25,7 @@ models/
 *.h5
 *.parquet
 *.csv
+
+_bmad/*
+_bmad-output/*
+.claude/*
